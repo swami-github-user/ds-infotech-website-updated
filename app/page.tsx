@@ -1,9 +1,9 @@
 import Navbar from "@/components/layout/Navbar";
 import Hero from "@/components/home/Hero";
 import Technologies from "@/components/home/Technologies";
-import Stats from "@/components/home/Stats";
 import TrustSection from "@/components/home/TrustSection";
 import PracticeAreas from "@/components/home/PracticeAreas";
+import Solutions from "@/components/home/Solutions";
 
 export default function HomePage() {
   return (
@@ -13,13 +13,13 @@ export default function HomePage() {
       <main>
         <Hero />
 
-        <Stats />
-
         <TrustSection />
 
         <Technologies />
 
         <PracticeAreas />
+
+        <Solutions />
       </main>
     </>
   );
