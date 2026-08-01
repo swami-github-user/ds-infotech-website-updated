@@ -3,6 +3,7 @@ import Hero from "@/components/home/Hero";
 import Technologies from "@/components/home/Technologies";
 import Stats from "@/components/home/Stats";
 import TrustSection from "@/components/home/TrustSection";
+import PracticeAreas from "@/components/home/PracticeAreas";
 
 export default function HomePage() {
   return (
@@ -17,6 +18,8 @@ export default function HomePage() {
         <TrustSection />
 
         <Technologies />
+
+        <PracticeAreas />
       </main>
     </>
   );
