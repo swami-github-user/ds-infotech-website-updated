@@ -1,13 +1,31 @@
+import Navbar from "@/components/layout/Navbar";
+
 export default function HomePage() {
   return (
-    <main>
-      <h1 className="text-center text-5xl font-bold mt-32">
-        DS Infotech
-      </h1>
+    <>
+      <Navbar />
 
-      <p className="mt-6 text-center text-xl text-slate-600">
-        Enterprise Learning. Real Skills. Real Impact.
-      </p>
-    </main>
+      <main className="pt-20">
+
+        <section className="flex h-screen items-center justify-center">
+
+          <div className="text-center">
+
+            <h1 className="text-6xl font-bold">
+              Enterprise Cloud,
+              <br />
+              DevOps & AI Learning
+            </h1>
+
+            <p className="mt-8 text-xl text-slate-600">
+              Enterprise Learning. Real Skills. Real Impact.
+            </p>
+
+          </div>
+
+        </section>
+
+      </main>
+    </>
   );
 }
