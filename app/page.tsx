@@ -5,6 +5,9 @@ import TrustSection from "@/components/home/TrustSection";
 import PracticeAreas from "@/components/home/PracticeAreas";
 import Solutions from "@/components/home/Solutions";
 import LearningFramework from "@/components/home/LearningFramework";
+import TrustedBy from "@/components/home/TrustedBy";
+import Testimonials from "@/components/home/Testimonials";
+import Contact from "@/components/home/Contact";
 
 export default function HomePage() {
   return (
@@ -23,6 +26,12 @@ export default function HomePage() {
         <Solutions />
 
         <LearningFramework />
+
+        <TrustedBy />
+
+        <Testimonials />
+
+        <Contact />
       </main>
     </>
   );
