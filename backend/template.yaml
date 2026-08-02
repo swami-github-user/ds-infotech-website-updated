@@ -27,7 +27,8 @@ Resources:
       CorsConfiguration:
         AllowOrigins:
           - "http://localhost:3000"
-          - "http://dsinfotech.com.s3-website-ap-south-1.amazonaws.com"
+          - "http://dsinfotech.com.s3-website.ap-south-1.amazonaws.com"
+          - "https://d2ylihmnhrlj5i.cloudfront.net"
         AllowMethods:
           - POST
           - OPTIONS
