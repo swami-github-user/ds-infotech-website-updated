@@ -147,11 +147,10 @@
 =========================== */
 
 .hero-image{
-    flex:1.15;
+    width:100%;
     display:flex;
-    justify-content:center;
+    justify-content:flex-end;
     align-items:center;
-    position:relative;
 }
 
 .hero-glow{
@@ -255,8 +254,7 @@
 
 .hero-illustration{
     width:100%;
-    max-width:560px;
-
+    max-width:none;
 }
 
 }

@@ -9,39 +9,44 @@ import {
 
 export const framework = [
   {
-    title: "Assessment",
+    title: "Enroll & Skill Assessment",
     description:
-      "Evaluate existing cloud, DevOps and AI skills to identify learning gaps and define measurable outcomes.",
+      "Choose the right AWS learning path based on your current experience, certification goals and career aspirations.",
     icon: ClipboardCheck,
   },
+
   {
-    title: "Learning Path Design",
+    title: "Instructor-led Learning",
     description:
-      "Create customized role-based learning journeys aligned with your organization's technology roadmap.",
+      "Learn directly from experienced AWS-certified trainers through interactive classroom sessions and architecture discussions.",
     icon: Route,
   },
+
   {
-    title: "Hands-on Labs",
+    title: "Hands-on AWS Labs",
     description:
-      "Practice in real AWS environments using enterprise-grade DevOps and AI toolchains.",
+      "Practice every concept inside your own AWS environment using guided labs covering real AWS services.",
     icon: Laptop,
   },
+
   {
-    title: "Enterprise Project",
+    title: "Real-world Projects",
     description:
-      "Build complete end-to-end solutions through real-world implementation projects.",
+      "Build production-grade cloud solutions using AWS services exactly as they are implemented in enterprise environments.",
     icon: Briefcase,
   },
+
   {
-    title: "Knowledge Validation",
+    title: "Certification Preparation",
     description:
-      "Measure success through assessments, mock interviews and certification readiness.",
+      "Prepare confidently through architecture reviews, mock exams, practice questions and certification guidance.",
     icon: BadgeCheck,
   },
+
   {
-    title: "Post Training Enablement",
+    title: "Career & Enterprise Success",
     description:
-      "Continue learning through mentoring, project guidance and extended technical support.",
+      "Earn globally recognized AWS certifications and build practical cloud skills that employers value.",
     icon: LifeBuoy,
   },
 ];

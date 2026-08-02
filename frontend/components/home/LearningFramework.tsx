@@ -10,9 +10,9 @@ export default function LearningFramework() {
     <section className="py-28 bg-white">
       <Container>
         <SectionTitle
-          eyebrow="OUR METHODOLOGY"
-          title="The DS Infotech Learning Framework™"
-          description="A structured enterprise learning methodology designed to transform technology teams through practical, measurable outcomes."
+          eyebrow="OUR LEARNING JOURNEY"
+          title="Your Success Framework™"
+          description="A structured learning journey designed to take you from AWS fundamentals to professional certifications through instructor-led training, hands-on labs, real-world projects and exam readiness."
         />
 
         <div className="relative mt-20 max-w-6xl mx-auto">
@@ -43,10 +43,10 @@ export default function LearningFramework() {
                     scale: 1.02,
                     y: -6,
                   }}
-                  className="flex-1 max-w-xl rounded-2xl border bg-white p-8 shadow-sm transition hover:shadow-xl"
+                className="flex-1 max-w-xl rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-orange-500 hover:shadow-2xl"
                 >
                   <span className="text-sm font-semibold uppercase tracking-wider text-orange-500">
-                    Step {index + 1}
+                    AWS JOURNEY • STEP {index + 1}
                   </span>
 
                   <h3 className="mt-2 text-2xl font-bold text-slate-900">
@@ -79,9 +79,9 @@ export default function LearningFramework() {
                             transition={{
                               duration: 0.6,
                             }}
-                            className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full bg-orange-500 text-white shadow-xl"
+                            className="relative z-10 flex h-16 w-16 items-center justify-center rounded-full bg-orange-500 text-white shadow-xl"
                           >
-                            <Icon size={26} />
+                            <Icon size={30} />
                           </motion.div>
                         </div>
 

@@ -60,13 +60,14 @@ const Footer = () => {
 
           <div className="footer-column">
 
-            <h4>Company</h4>
+            <h4>Training Programs</h4>
 
-            <a href="#">About</a>
-            <a href="#">Solutions</a>
-            <a href="#">Services</a>
-            <a href="#">Industries</a>
-            <a href="#">Contact</a>
+            <a href="#training-programs">AWS Certifications</a>
+            <a href="#training-programs">Corporate Training</a>
+            <a href="#training-programs">AI & ML Programs</a>
+            <a href="#training-programs">Containers on AWS</a>
+            <a href="#training-programs">GenAI on AWS</a>
+            <a href="#contact">Career Guidance</a>
 
           </div>
 
@@ -74,13 +75,14 @@ const Footer = () => {
 
           <div className="footer-column">
 
-            <h4>Solutions</h4>
+            <h4>AWS Certifications</h4>
 
-            <a href="#">AWS Training</a>
-            <a href="#">DevOps</a>
-            <a href="#">Generative AI</a>
-            <a href="#">Corporate Training</a>
-            <a href="#">Custom Learning</a>
+            <a href="#training-programs">Cloud Practitioner</a>
+            <a href="#training-programs">Solutions Architect Associate</a>
+            <a href="#training-programs">Developer Associate</a>
+            <a href="#training-programs">SysOps Administrator</a>
+            <a href="#training-programs">DevOps Professional</a>
+            <a href="#training-programs">Security Specialty</a>
 
           </div>
 
@@ -88,13 +90,14 @@ const Footer = () => {
 
           <div className="footer-column">
 
-            <h4>Technologies</h4>
+            <h4>Learning Domains</h4>
 
-            <a href="#">AWS</a>
-            <a href="#">Docker</a>
-            <a href="#">Terraform</a>
-            <a href="#">Kubernetes</a>
-            <a href="#">Amazon Bedrock</a>
+            <a href="#training-programs">Cloud Computing</a>
+            <a href="#training-programs">DevOps</a>
+            <a href="#training-programs">Generative AI</a>
+            <a href="#training-programs">Containers</a>
+            <a href="#training-programs">Cloud Security</a>
+            <a href="#training-programs">Development</a>
 
           </div>
 
@@ -132,7 +135,6 @@ const Footer = () => {
           <div className="footer-links">
             <a href="#">Privacy Policy</a>
             <a href="#">Terms</a>
-            <span>Made with ❤️ in India</span>
           </div>
 
         </div>

@@ -6,18 +6,18 @@ import { solutions } from "@/constants/solutions";
 export default function Solutions() {
   return (
     <section
-      id="solutions"
+      id="training-programs"
       className="bg-slate-50 py-24"
     >
       <Container>
 
         <SectionTitle
-          eyebrow="SOLUTIONS"
-          title="Enterprise Learning Solutions"
-          description="Programs designed to help organizations adopt modern technologies with confidence."
+          eyebrow="AWS TRAINING PROGRAMS"
+          title="AWS Certification & Professional Training Programs"
+          description="Comprehensive AWS learning paths designed for beginners, professionals and enterprise teams. Every course includes instructor-led training, hands-on labs, real-world projects and certification guidance."
         />
 
-        <div className="mt-16 grid gap-8 md:grid-cols-2">
+        <div className="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
           {solutions.map((solution) => {
             const Icon = solution.icon;
 
