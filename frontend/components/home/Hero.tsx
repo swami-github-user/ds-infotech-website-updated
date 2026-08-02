@@ -29,7 +29,7 @@ export default function Hero() {
             <h1 className="mt-8 text-5xl font-bold leading-tight text-slate-900 lg:text-7xl">
                 Master
                 <span className="block text-orange-500">
-                    AWS cloud
+                    AWS Cloud
                 </span>
                 with Industry Experts
             </h1>
