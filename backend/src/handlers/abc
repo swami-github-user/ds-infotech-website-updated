@@ -1,0 +1,1 @@
+Invoke-RestMethod -Uri "https://yff8o05lr2.execute-api.us-east-1.amazonaws.com/contact" -Method POST -ContentType "application/json" -Body '{"name":"Sameer", "email":"sameer@test.com","phone":"+919876543210","company":"DS Infotech","service":"AWS Training","message":"I would like corporate AWS training."}'

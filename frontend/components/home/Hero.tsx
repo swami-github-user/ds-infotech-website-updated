@@ -1,17 +1,18 @@
 "use client";
-
+import "./Hero.css";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function Hero() {
   return (
     <section
       id="home"
-      className="relative overflow-hidden bg-gradient-to-b from-slate-50 to-white"
+      className="relative overflow-hidden bg-gradient-to-b from-slate-50 to-white pt-24 lg:pt-28"
     >
       <Container>
-        <div className="grid min-h-[85vh] items-center gap-16 lg:grid-cols-2">
+        <div className="grid min-h-[85vh] items-center gap-12 py-10 lg:grid-cols-2 lg:gap-20">
 
           {/* Left Content */}
 
@@ -69,12 +70,15 @@ export default function Hero() {
             className="hidden lg:flex justify-center"
           >
 
-            <div className="flex h-[450px] w-[450px] items-center justify-center rounded-3xl bg-slate-100 shadow-xl">
-
-              <span className="text-2xl text-slate-400">
-                Hero Illustration
-              </span>
-
+            <div className="hero-image">
+                <Image
+                    src="/images/hero/hero-illustration.png"
+                    alt="DS Infotech Enterprise Cloud DevOps AI"
+                    width={700}
+                    height={700}
+                    priority
+                    className="hero-illustration"
+                />
             </div>
 
           </motion.div>

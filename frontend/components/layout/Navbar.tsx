@@ -29,9 +29,9 @@ export default function Navbar() {
       }`}
     >
       <Container>
-        <div className="flex h-20 items-center justify-between">
+        <div className="flex h-20 items-center justify-between gap-8">
 
-          <Link href="/" className="text-3xl font-bold">
+          <Link href="/" className="shrink-0 text-3xl font-bold whitespace-nowrap">
             DS <span className="text-orange-500">Infotech</span>
           </Link>
 
