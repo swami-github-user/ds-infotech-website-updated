@@ -23,13 +23,13 @@ export default function Hero() {
           >
 
             <span className="rounded-full bg-orange-100 px-4 py-2 text-sm font-semibold text-orange-600">
-                🚀 India's Premier AWS & DevOps Training Institute
+                🚀 India's Premier Training Institute
             </span>
 
             <h1 className="mt-8 text-5xl font-bold leading-tight text-slate-900 lg:text-7xl">
                 Master
                 <span className="block text-orange-500">
-                    AWS & DevOps
+                    AWS cloud
                 </span>
                 with Industry Experts
             </h1>
