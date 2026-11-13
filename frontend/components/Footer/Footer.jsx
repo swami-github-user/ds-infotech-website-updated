@@ -37,12 +37,12 @@ const Footer = () => {
 
             <h4>Training Programs</h4>
 
-            <a href="#training-programs">AWS Certifications</a>
-            <a href="#training-programs">Corporate Training</a>
-            <a href="#training-programs">AI & ML Programs</a>
-            <a href="#training-programs">Containers on AWS</a>
-            <a href="#training-programs">GenAI on AWS</a>
-            <a href="#contact">Career Guidance</a>
+            <a href="#training-programs">GenAI Builder Bootcamp</a>
+            <a href="#training-programs">Agentic AI on AWS</a>
+            <a href="#training-programs">AWS DevOps Accelerator</a>
+            <a href="#training-programs">Containers to Kubernetes</a>
+            <a href="#training-programs">Cloud Architecture on AWS</a>
+            <a href="#training-programs">Machine Learning &amp; MLOps</a>
 
           </div>
 
@@ -50,14 +50,13 @@ const Footer = () => {
 
           <div className="footer-column">
 
-            <h4>AWS Certifications</h4>
+            <h4>Engagements</h4>
 
-            <a href="#training-programs">Cloud Practitioner</a>
-            <a href="#training-programs">Solutions Architect Associate</a>
-            <a href="#training-programs">Developer Associate</a>
-            <a href="#training-programs">SysOps Administrator</a>
-            <a href="#training-programs">DevOps Professional</a>
-            <a href="#training-programs">Security Specialty</a>
+            <a href="#engagements">Delivery Partnerships</a>
+            <a href="#engagements">Corporate Programs</a>
+            <a href="#engagements">Content Development</a>
+            <a href="#delivery">How We Deliver</a>
+            <a href="#contact">Request a Proposal</a>
 
           </div>
 

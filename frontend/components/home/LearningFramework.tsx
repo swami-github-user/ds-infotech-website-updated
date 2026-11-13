@@ -10,9 +10,9 @@ export default function LearningFramework() {
     <section className="py-28 bg-white">
       <Container>
         <SectionTitle
-          eyebrow="OUR LEARNING JOURNEY"
-          title="Your Success Framework"
-          description="A structured learning journey designed to take you from AWS fundamentals to professional certifications through instructor-led training, hands-on labs, real-world projects and exam readiness."
+          eyebrow="HOW AN ENGAGEMENT RUNS"
+          title="From Requirement to Results"
+          description="A clear, repeatable process so you know what to expect before, during and after every program."
         />
 
         <div className="relative mt-20 max-w-6xl mx-auto">
@@ -34,10 +34,9 @@ export default function LearningFramework() {
                     opacity: 1,
                     x: 0,
                   }}
-                  viewport={{ once: true }}
+                  viewport={{ once: true, amount: 0.2 }}
                   transition={{
-                    duration: 0.6,
-                    delay: index * 0.15,
+                    duration: 0.4,
                   }}
                   whileHover={{
                     scale: 1.02,
@@ -46,7 +45,7 @@ export default function LearningFramework() {
                 className="flex-1 max-w-xl rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-orange-500 hover:shadow-2xl"
                 >
                   <span className="text-sm font-semibold uppercase tracking-wider text-orange-500">
-                    AWS JOURNEY • STEP {index + 1}
+                    STEP {index + 1}
                   </span>
 
                   <h3 className="mt-2 text-2xl font-bold text-slate-900">

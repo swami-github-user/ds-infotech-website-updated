@@ -4,7 +4,8 @@ import Technologies from "@/components/home/Technologies";
 import TrustSection from "@/components/home/TrustSection";
 import Solutions from "@/components/home/Solutions";
 import LearningFramework from "@/components/home/LearningFramework";
-import TrustedBy from "@/components/home/TrustedBy";
+import Delivery from "@/components/home/Delivery";
+import Engagements from "@/components/home/Engagements";
 import Contact from "@/components/home/Contact";
 import Footer from "@/components/Footer";
 
@@ -16,15 +17,17 @@ export default function HomePage() {
       <main>
         <Hero />
 
-        <TrustSection />
-
-        <Technologies />
-
         <Solutions />
+
+        <Delivery />
+
+        <Engagements />
 
         <LearningFramework />
 
-        <TrustedBy />
+        <TrustSection />
+
+        <Technologies />
 
         <Contact />
 

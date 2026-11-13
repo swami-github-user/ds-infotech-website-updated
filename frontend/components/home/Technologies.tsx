@@ -13,7 +13,7 @@ export default function Technologies() {
         <SectionTitle
           eyebrow="TECHNOLOGIES"
           title="Technologies We Enable"
-          description="Hands-on learning across the platforms and tools modern enterprises rely on."
+          description="Hands-on coverage of the platforms and tools enterprise teams use every day."
         />
 
         <div className="mt-16 grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">

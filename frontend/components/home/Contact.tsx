@@ -18,7 +18,7 @@ export default function Contact() {
     company: "",
     email: "",
     phone: "",
-    service: "AWS Training",
+    service: "Delivery Partnership",
     message: "",
   });
 
@@ -81,12 +81,14 @@ export default function Contact() {
         company: "",
         email: "",
         phone: "",
-        service: "AWS Training",
+        service: "Delivery Partnership",
         message: "",
       });
       setLoading(false);
-    } catch (err: any) {
-      setError(err.message || "Something went wrong.");
+    } catch (err: unknown) {
+      setError(
+        err instanceof Error ? err.message : "Something went wrong."
+      );
       setLoading(false);
     } finally {
       setLoading(false);
@@ -102,8 +104,8 @@ export default function Contact() {
 
         <SectionTitle
           eyebrow="CONTACT"
-          title="Ready to Transform Your Team?"
-          description="Let's discuss how DS Infotech can help your organization build Cloud, DevOps and AI capabilities."
+          title="Request a Training Proposal"
+          description="Share the topic, audience and preferred dates. We typically respond with an outline and proposal within two business days."
         />
 
         <div className="mt-16 grid gap-12 lg:grid-cols-2">
@@ -126,6 +128,7 @@ export default function Contact() {
                 type="text"
                 name="name"
                 placeholder="Full Name"
+                aria-label="Full Name"
                 value={formData.name}
                 onChange={handleChange}
                 required
@@ -136,6 +139,7 @@ export default function Contact() {
                 type="text"
                 name="company"
                 placeholder="Company Name"
+                aria-label="Company Name"
                 value={formData.company}
                 onChange={handleChange}
                 required
@@ -146,6 +150,7 @@ export default function Contact() {
                 type="email"
                 name="email"
                 placeholder="Email Address"
+                aria-label="Email Address"
                 value={formData.email}
                 onChange={handleChange}
                 required
@@ -156,6 +161,7 @@ export default function Contact() {
                 type="text"
                 name="phone"
                 placeholder="Phone Number"
+                aria-label="Phone Number"
                 value={formData.phone}
                 onChange={handleChange}
                 required
@@ -164,21 +170,25 @@ export default function Contact() {
 
               <select
                 name="service"
+                aria-label="Service required"
                 value={formData.service}
                 onChange={handleChange}
                 className="rounded-xl border p-4 outline-none focus:border-orange-500"
               >
-                <option>AWS Training</option>
-                <option>DevOps Training</option>
-                <option>AI / GenAI Training</option>
-                <option>Corporate Training</option>
-                <option>Custom Learning Path</option>
+                <option>Delivery Partnership</option>
+                <option>Corporate Training Program</option>
+                <option>Content Development</option>
+                <option>Generative AI / Agentic AI Training</option>
+                <option>DevOps / Containers Training</option>
+                <option>Cloud Architecture / ML Training</option>
+                <option>Other</option>
               </select>
 
               <textarea
                 rows={5}
                 name="message"
-                placeholder="Tell us about your requirement..."
+                aria-label="Requirement details"
+                placeholder="Topic, audience size and level, preferred dates and delivery mode..."
                 value={formData.message}
                 onChange={handleChange}
                 required
