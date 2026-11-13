@@ -119,7 +119,6 @@ export default function HeroVisual() {
       <div
         ref={sceneRef}
         className="hero-visual-scene absolute inset-0"
-        style={{ transformStyle: "preserve-3d" }}
       >
         {/* Floor layer: rings, connectors, card shadows, pedestal */}
         <svg
@@ -178,8 +177,8 @@ export default function HeroVisual() {
 
         {/* Hub card standing on the pedestal */}
         <div
-          className="absolute w-[34%]"
-          style={{ left: "50%", top: "40%", transform: "translate(-50%, -50%) rotateX(6deg)" }}
+          className="absolute z-10 w-[34%]"
+          style={{ left: "50%", top: "40%", transform: "translate(-50%, -50%) perspective(900px) rotateX(6deg)" }}
         >
           <div className="hero-visual-hub relative flex flex-col items-center rounded-2xl border border-orange-400/60 bg-gradient-to-b from-[#1c2b52] to-[#0e1830] px-3 pb-4 pt-3.5 text-center">
             <span className="text-xl font-bold leading-tight text-white">
@@ -210,11 +209,11 @@ export default function HeroVisual() {
           return (
             <div
               key={m.title}
-              className="absolute w-[28%]"
+              className="absolute z-10 w-[28%]"
               style={{
                 left: `${m.x}%`,
                 top: `${m.y}%`,
-                transform: `translate(-50%, -50%) rotateY(${turn}deg) rotateX(${tilt}deg)`,
+                transform: `translate(-50%, -50%) perspective(700px) rotateY(${turn}deg) rotateX(${tilt}deg)`,
               }}
             >
               <div className="hero-visual-card" style={{ animationDelay: `${i * 0.6}s` }}>
