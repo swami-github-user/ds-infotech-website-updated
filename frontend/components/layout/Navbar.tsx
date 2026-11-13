@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Lock, Menu, X } from "lucide-react";
 import Container from "@/components/ui/Container";
 import { navigation } from "@/constants/navigation";
 
@@ -47,6 +47,14 @@ export default function Navbar() {
               </Link>
             ))}
 
+            <a
+              href="/portal/index.html"
+              className="flex items-center gap-2 rounded-xl border border-slate-300 px-4 py-3 text-slate-700 transition hover:border-orange-500 hover:text-orange-600"
+            >
+              <Lock size={16} />
+              Learner Login
+            </a>
+
             <Link
               href="#contact"
               className="rounded-xl bg-orange-500 px-5 py-3 text-white transition hover:bg-orange-600"
@@ -81,9 +89,17 @@ export default function Navbar() {
                 </Link>
               ))}
 
+              <a
+                href="/portal/index.html"
+                className="mx-4 mt-4 flex items-center justify-center gap-2 rounded-xl border border-slate-300 px-4 py-3 text-slate-700"
+              >
+                <Lock size={16} />
+                Learner Login
+              </a>
+
               <Link
                 href="#contact"
-                className="mx-4 mt-4 rounded-xl bg-orange-500 px-4 py-3 text-center text-white"
+                className="mx-4 mt-3 rounded-xl bg-orange-500 px-4 py-3 text-center text-white"
                 onClick={() => setMobileOpen(false)}
               >
                 Request a Proposal
