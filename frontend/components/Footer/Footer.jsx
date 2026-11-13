@@ -87,6 +87,7 @@ const Footer = () => {
             </div>
 
             <a href="#contact">Send an Inquiry</a>
+            <a href="/portal/index.html">Learner Login</a>
 
           </div>
 
