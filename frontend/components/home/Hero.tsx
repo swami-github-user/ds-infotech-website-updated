@@ -23,7 +23,7 @@ export default function Hero() {
           >
 
             <span className="rounded-full bg-orange-100 px-4 py-2 text-sm font-semibold text-orange-600">
-                🚀 India's Premier Training Institute
+                Cloud, DevOps & Generative AI Training
             </span>
 
             <h1 className="mt-8 text-5xl font-bold leading-tight text-slate-900 lg:text-7xl">
@@ -35,8 +35,8 @@ export default function Hero() {
             </h1>
 
             <p className="mt-14 max-w-2xl text-xl leading-8 text-slate-600">
-              Master AWS Cloud, DevOps and Generative AI through official AWS learning
-              paths, immersive hands-on labs, certification-focused training and
+              Master AWS Cloud, DevOps and Generative AI through structured learning
+              paths aligned with AWS certification objectives, immersive hands-on labs, certification-focused training and
               enterprise-grade projects.
 
               <br /><br />
@@ -60,7 +60,7 @@ export default function Hero() {
 
             <div className="mt-10 flex flex-wrap gap-4 text-sm font-medium text-slate-700">
 
-                <div>✅ Official AWS Learning Paths</div>
+                <div>✅ Certification-Aligned Learning Paths</div>
 
                 <div>✅ Hands-on Labs</div>
 

@@ -11,7 +11,7 @@ export default function LearningFramework() {
       <Container>
         <SectionTitle
           eyebrow="OUR LEARNING JOURNEY"
-          title="Your Success Framework™"
+          title="Your Success Framework"
           description="A structured learning journey designed to take you from AWS fundamentals to professional certifications through instructor-led training, hands-on labs, real-world projects and exam readiness."
         />
 

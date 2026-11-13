@@ -1,15 +1,6 @@
 "use client";
 import "./Footer.css";
-import {
-  MapPin,
-  Mail,
-  Phone,
-} from "lucide-react";
-import {
-  FaLinkedinIn,
-  FaGithub,
-  FaYoutube,
-} from "react-icons/fa";
+import { MapPin } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -37,22 +28,6 @@ const Footer = () => {
               AI and GenAI capabilities through
               practical enterprise learning.
             </p>
-
-            <div className="footer-social">
-
-              <a href="#">
-                <FaLinkedinIn size={18}/>
-              </a>
-
-              <a href="#">
-                <FaGithub size={20}/>
-              </a>
-
-              <a href="#">
-                <FaYoutube size={18}/>
-              </a>
-
-            </div>
 
           </div>
 
@@ -109,18 +84,10 @@ const Footer = () => {
 
             <div className="footer-contact">
               <MapPin size={18}/>
-              <span>Kolhapur, Maharashtra</span>
+              <span>Maharashtra, India</span>
             </div>
 
-            <div className="footer-contact">
-              <Mail size={18}/>
-              <span>info@dsinfotech.com</span>
-            </div>
-
-            <div className="footer-contact">
-              <Phone size={18}/>
-              <span>+91 XXXXX XXXXX</span>
-            </div>
+            <a href="#contact">Send an Inquiry</a>
 
           </div>
 
@@ -132,10 +99,12 @@ const Footer = () => {
             © 2026 DS Infotech. All Rights Reserved.
           </p>
 
-          <div className="footer-links">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms</a>
-          </div>
+          <p className="footer-disclaimer">
+            DS Infotech is an independent training provider and is not
+            affiliated with, authorized or endorsed by Amazon Web Services.
+            AWS and related marks are trademarks of Amazon.com, Inc. or its
+            affiliates.
+          </p>
 
         </div>
 

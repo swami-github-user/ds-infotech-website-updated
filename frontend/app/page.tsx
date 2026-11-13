@@ -5,7 +5,6 @@ import TrustSection from "@/components/home/TrustSection";
 import Solutions from "@/components/home/Solutions";
 import LearningFramework from "@/components/home/LearningFramework";
 import TrustedBy from "@/components/home/TrustedBy";
-import Testimonials from "@/components/home/Testimonials";
 import Contact from "@/components/home/Contact";
 import Footer from "@/components/Footer";
 
@@ -26,8 +25,6 @@ export default function HomePage() {
         <LearningFramework />
 
         <TrustedBy />
-
-        <Testimonials />
 
         <Contact />
 
