@@ -3,6 +3,18 @@ Transform: AWS::Serverless-2016-10-31
 
 Description: DS Infotech Serverless Backend
 
+Parameters:
+
+  PortalUrl:
+    Type: String
+    Default: https://d2ylihmnhrlj5i.cloudfront.net/portal/index.html
+    Description: Public URL of the learner portal page
+
+  AuthDomainPrefix:
+    Type: String
+    Default: dsinfotech-learner-portal
+    Description: Prefix for the Cognito hosted login domain (must be globally unique in the region)
+
 Globals:
   Function:
     Runtime: nodejs22.x
@@ -30,10 +42,20 @@ Resources:
           - "http://dsinfotech.com.s3-website.ap-south-1.amazonaws.com"
           - "https://d2ylihmnhrlj5i.cloudfront.net"
         AllowMethods:
+          - GET
           - POST
           - OPTIONS
         AllowHeaders:
           - Content-Type
+          - Authorization
+      Auth:
+        Authorizers:
+          LearnerAuth:
+            IdentitySource: $request.header.Authorization
+            JwtConfiguration:
+              issuer: !Sub "https://cognito-idp.${AWS::Region}.amazonaws.com/${LearnerUserPool}"
+              audience:
+                - !Ref LearnerUserPoolClient
 
   ContactRequestsTable:
     Type: AWS::DynamoDB::Table
@@ -96,6 +118,225 @@ Resources:
 
             Method: POST
 
+#########################################################
+# Learner Portal: authentication
+#########################################################
+
+  LearnerUserPool:
+    Type: AWS::Cognito::UserPool
+    Properties:
+      UserPoolName: ds-infotech-learners
+      UsernameAttributes:
+        - email
+      AutoVerifiedAttributes:
+        - email
+      AdminCreateUserConfig:
+        AllowAdminCreateUserOnly: true
+        InviteMessageTemplate:
+          EmailSubject: Your DS Infotech course access
+          EmailMessage: !Sub |
+            Welcome to DS Infotech.<br><br>
+            Your course recordings are ready. Sign in at ${PortalUrl}<br><br>
+            Email: {username}<br>
+            Temporary password: {####}<br><br>
+            You will be asked to set a new password on first sign-in.
+      Policies:
+        PasswordPolicy:
+          MinimumLength: 10
+          RequireLowercase: true
+          RequireUppercase: true
+          RequireNumbers: true
+          RequireSymbols: false
+          TemporaryPasswordValidityDays: 7
+      AccountRecoverySetting:
+        RecoveryMechanisms:
+          - Name: verified_email
+            Priority: 1
+
+  LearnerUserPoolClient:
+    Type: AWS::Cognito::UserPoolClient
+    Properties:
+      ClientName: ds-infotech-portal
+      UserPoolId: !Ref LearnerUserPool
+      GenerateSecret: false
+      AllowedOAuthFlowsUserPoolClient: true
+      AllowedOAuthFlows:
+        - code
+      AllowedOAuthScopes:
+        - openid
+        - email
+      SupportedIdentityProviders:
+        - COGNITO
+      CallbackURLs:
+        - !Ref PortalUrl
+        - http://localhost:3000/portal/
+      LogoutURLs:
+        - !Ref PortalUrl
+        - http://localhost:3000/portal/
+      ExplicitAuthFlows:
+        - ALLOW_USER_SRP_AUTH
+        - ALLOW_REFRESH_TOKEN_AUTH
+      PreventUserExistenceErrors: ENABLED
+      AccessTokenValidity: 4
+      IdTokenValidity: 4
+      RefreshTokenValidity: 7
+      TokenValidityUnits:
+        AccessToken: hours
+        IdToken: hours
+        RefreshToken: days
+
+  LearnerUserPoolDomain:
+    Type: AWS::Cognito::UserPoolDomain
+    Properties:
+      Domain: !Ref AuthDomainPrefix
+      UserPoolId: !Ref LearnerUserPool
+
+#########################################################
+# Learner Portal: recordings storage and delivery
+#########################################################
+
+  RecordingsBucket:
+    Type: AWS::S3::Bucket
+    DeletionPolicy: Retain
+    UpdateReplacePolicy: Retain
+    Properties:
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+      OwnershipControls:
+        Rules:
+          - ObjectOwnership: BucketOwnerEnforced
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
+
+  # Generates the CloudFront signing key pair once; the private key is kept
+  # in SSM Parameter Store (SecureString) and never leaves AWS.
+  SigningKeyGeneratorFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: src/handlers/portal/signingKey.handler
+      CodeUri: .
+      Timeout: 60
+      Policies:
+        - Statement:
+            - Effect: Allow
+              Action:
+                - ssm:PutParameter
+                - ssm:GetParameter
+                - ssm:DeleteParameter
+              Resource: !Sub "arn:aws:ssm:${AWS::Region}:${AWS::AccountId}:parameter/ds-infotech/portal/*"
+
+  SigningKeyPair:
+    Type: Custom::SigningKeyPair
+    Properties:
+      ServiceToken: !GetAtt SigningKeyGeneratorFunction.Arn
+      ParameterPrefix: /ds-infotech/portal/signing-key
+
+  DownloadsPublicKey:
+    Type: AWS::CloudFront::PublicKey
+    Properties:
+      PublicKeyConfig:
+        CallerReference: !Sub "${AWS::StackName}-downloads-key"
+        Name: !Sub "${AWS::StackName}-downloads-key"
+        EncodedKey: !GetAtt SigningKeyPair.PublicKey
+
+  DownloadsKeyGroup:
+    Type: AWS::CloudFront::KeyGroup
+    Properties:
+      KeyGroupConfig:
+        Name: !Sub "${AWS::StackName}-downloads"
+        Items:
+          - !Ref DownloadsPublicKey
+
+  DownloadsOriginAccessControl:
+    Type: AWS::CloudFront::OriginAccessControl
+    Properties:
+      OriginAccessControlConfig:
+        Name: !Sub "${AWS::StackName}-recordings-oac"
+        OriginAccessControlOriginType: s3
+        SigningBehavior: always
+        SigningProtocol: sigv4
+
+  DownloadsDistribution:
+    Type: AWS::CloudFront::Distribution
+    Properties:
+      DistributionConfig:
+        Enabled: true
+        Comment: DS Infotech learner downloads
+        HttpVersion: http2and3
+        PriceClass: PriceClass_200
+        Origins:
+          - Id: recordings
+            DomainName: !GetAtt RecordingsBucket.RegionalDomainName
+            OriginAccessControlId: !GetAtt DownloadsOriginAccessControl.Id
+            S3OriginConfig:
+              OriginAccessIdentity: ""
+        DefaultCacheBehavior:
+          TargetOriginId: recordings
+          ViewerProtocolPolicy: redirect-to-https
+          AllowedMethods:
+            - GET
+            - HEAD
+          CachePolicyId: 658327ea-f89d-4fab-a63d-7e88639e58f6 # Managed-CachingOptimized
+          TrustedKeyGroups:
+            - !Ref DownloadsKeyGroup
+
+  RecordingsBucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref RecordingsBucket
+      PolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Sid: AllowCloudFrontRead
+            Effect: Allow
+            Principal:
+              Service: cloudfront.amazonaws.com
+            Action: s3:GetObject
+            Resource: !Sub "${RecordingsBucket.Arn}/*"
+            Condition:
+              StringEquals:
+                AWS:SourceArn: !Sub "arn:aws:cloudfront::${AWS::AccountId}:distribution/${DownloadsDistribution}"
+
+#########################################################
+# Learner Portal: recordings API
+#########################################################
+
+  RecordingsFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: ds-infotech-portal-recordings
+      Handler: src/handlers/portal/recordings.handler
+      CodeUri: .
+      Environment:
+        Variables:
+          RECORDINGS_BUCKET: !Ref RecordingsBucket
+          DOWNLOAD_DOMAIN: !GetAtt DownloadsDistribution.DomainName
+          KEY_PAIR_ID: !Ref DownloadsPublicKey
+          PRIVATE_KEY_PARAMETER: !GetAtt SigningKeyPair.PrivateKeyParameter
+          LINK_TTL_HOURS: "6"
+      Policies:
+        - S3ReadPolicy:
+            BucketName: !Ref RecordingsBucket
+        - Statement:
+            - Effect: Allow
+              Action:
+                - ssm:GetParameter
+              Resource: !Sub "arn:aws:ssm:${AWS::Region}:${AWS::AccountId}:parameter/ds-infotech/portal/*"
+      Events:
+        RecordingsApi:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref HttpApi
+            Path: /recordings
+            Method: GET
+            Auth:
+              Authorizer: LearnerAuth
+
 Outputs:
 
   ContactApi:
@@ -103,3 +344,23 @@ Outputs:
     Description: Contact API Endpoint
 
     Value: !Sub "https://${HttpApi}.execute-api.${AWS::Region}.amazonaws.com/contact"
+
+  PortalApi:
+    Description: Recordings API endpoint (NEXT_PUBLIC_PORTAL_API)
+    Value: !Sub "https://${HttpApi}.execute-api.${AWS::Region}.amazonaws.com/recordings"
+
+  CognitoDomain:
+    Description: Hosted login domain (NEXT_PUBLIC_COGNITO_DOMAIN)
+    Value: !Sub "https://${AuthDomainPrefix}.auth.${AWS::Region}.amazoncognito.com"
+
+  CognitoClientId:
+    Description: App client ID (NEXT_PUBLIC_COGNITO_CLIENT_ID)
+    Value: !Ref LearnerUserPoolClient
+
+  LearnerUserPoolId:
+    Description: User pool ID (used by scripts/add-learner.sh)
+    Value: !Ref LearnerUserPool
+
+  RecordingsBucketName:
+    Description: Bucket for course recordings (used by scripts/upload-recordings.sh)
+    Value: !Ref RecordingsBucket
