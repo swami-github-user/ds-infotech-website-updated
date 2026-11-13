@@ -17,9 +17,9 @@ export default function LearningFramework() {
 
         <div className="relative mt-20 max-w-6xl mx-auto">
           {/* Center Timeline */}
-          <div className="absolute left-1/2 top-0 bottom-0 w-1 -translate-x-1/2 bg-orange-200"></div>
+          <div className="absolute left-7 top-0 bottom-0 w-1 -translate-x-1/2 bg-orange-200 md:left-1/2"></div>
 
-          <div className="space-y-16">
+          <div className="space-y-10 md:space-y-16">
             {framework.map((step, index) => {
               const Icon = step.icon;
               const isLeft = index % 2 === 0;
@@ -28,7 +28,7 @@ export default function LearningFramework() {
                 <motion.div
                   initial={{
                     opacity: 0,
-                    x: isLeft ? -60 : 60,
+                    x: isLeft ? -40 : 40,
                   }}
                   whileInView={{
                     opacity: 1,
@@ -42,7 +42,7 @@ export default function LearningFramework() {
                     scale: 1.02,
                     y: -6,
                   }}
-                className="flex-1 max-w-xl rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-orange-500 hover:shadow-2xl"
+                className="w-full max-w-xl rounded-3xl border border-slate-200 bg-white p-6 md:p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-orange-500 hover:shadow-2xl"
                 >
                   <span className="text-sm font-semibold uppercase tracking-wider text-orange-500">
                     STEP {index + 1}
@@ -58,55 +58,33 @@ export default function LearningFramework() {
                 </motion.div>
               );
 
+              const Dot = (
+                <motion.div
+                  whileHover={{ rotate: 360 }}
+                  transition={{ duration: 0.6 }}
+                  className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full bg-orange-500 text-white shadow-xl"
+                >
+                  <Icon size={26} />
+                </motion.div>
+              );
+
               return (
                 <div
                   key={index}
-                  className={`relative flex items-center ${
-                    isLeft ? "justify-start" : "justify-end"
-                  }`}
+                  className="grid grid-cols-[3.5rem_1fr] items-center gap-4 md:grid-cols-[1fr_6rem_1fr] md:gap-0"
                 >
-                  <div className="flex w-full items-center">
-                    {isLeft ? (
-                      <>
-                        {Card}
+                  <div className="col-start-1 row-start-1 flex justify-center md:col-start-2">
+                    {Dot}
+                  </div>
 
-                        <div className="relative flex w-24 justify-center">
-                          <motion.div
-                            whileHover={{
-                              rotate: 360,
-                            }}
-                            transition={{
-                              duration: 0.6,
-                            }}
-                            className="relative z-10 flex h-16 w-16 items-center justify-center rounded-full bg-orange-500 text-white shadow-xl"
-                          >
-                            <Icon size={30} />
-                          </motion.div>
-                        </div>
-
-                        <div className="flex-1"></div>
-                      </>
-                    ) : (
-                      <>
-                        <div className="flex-1"></div>
-
-                        <div className="relative flex w-24 justify-center">
-                          <motion.div
-                            whileHover={{
-                              rotate: 360,
-                            }}
-                            transition={{
-                              duration: 0.6,
-                            }}
-                            className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full bg-orange-500 text-white shadow-xl"
-                          >
-                            <Icon size={26} />
-                          </motion.div>
-                        </div>
-
-                        {Card}
-                      </>
-                    )}
+                  <div
+                    className={`relative z-10 col-start-2 row-start-1 flex ${
+                      isLeft
+                        ? "md:col-start-1 md:justify-end"
+                        : "md:col-start-3 md:justify-start"
+                    }`}
+                  >
+                    {Card}
                   </div>
                 </div>
               );

@@ -10,7 +10,7 @@ export default function SectionTitle({
   description,
 }: Props) {
   return (
-    <div className="max-w-3xl">
+    <div className="mx-auto max-w-3xl text-center">
       {eyebrow && (
         <span className="text-sm font-semibold uppercase tracking-widest text-orange-500">
           {eyebrow}

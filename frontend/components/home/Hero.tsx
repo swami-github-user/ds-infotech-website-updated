@@ -3,7 +3,7 @@ import "./Hero.css";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import { motion } from "framer-motion";
-import Image from "next/image";
+import HeroVisual from "./HeroVisual";
 
 export default function Hero() {
   return (
@@ -57,7 +57,7 @@ export default function Hero() {
 
             </div>
 
-            <div className="mt-10 flex flex-wrap gap-4 text-sm font-medium text-slate-700">
+            <div className="mt-10 grid max-w-md grid-cols-2 gap-x-6 gap-y-3 text-sm font-medium text-slate-700">
 
                 <div>✅ Virtual Instructor-led</div>
 
@@ -77,18 +77,11 @@ export default function Hero() {
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
-            className="hidden lg:flex items-center justify-end w-full pl-24"
+            className="hidden lg:flex items-center justify-end w-full pl-12"
           >
 
             <div className="hero-image w-full">
-                <Image
-                    src="/images/hero/hero-illustration.png"
-                    alt="DS Infotech Enterprise Cloud DevOps AI"
-                    width={1400}
-                    height={1400}
-                    priority
-                    className="hero-illustration"
-                />
+                <HeroVisual />
             </div>
 
           </motion.div>

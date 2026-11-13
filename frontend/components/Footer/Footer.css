@@ -9,9 +9,9 @@
 }
 
 .footer-container {
-  max-width: 1280px;
+  max-width: 1500px;
   margin: auto;
-  padding: 70px 24px 50px;
+  padding: 70px 40px 50px;
   display: grid;
   grid-template-columns: 2.8fr 1fr 1fr 1fr 1.3fr;
   gap: 50px;
@@ -103,9 +103,9 @@
 
 .footer-bottom {
   border-top: 1px solid rgba(255,255,255,.08);
-  max-width: 1280px;
+  max-width: 1500px;
   margin: auto;
-  padding:80px 24px 60px;
+  padding:40px 40px 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -154,9 +154,10 @@
 @media (max-width: 640px) {
   .footer-container {
     grid-template-columns: minmax(0, 1fr);
+    padding: 56px 32px 40px;
   }
 
   .footer-bottom {
-    padding: 40px 24px;
+    padding: 32px 32px 40px;
   }
 }
