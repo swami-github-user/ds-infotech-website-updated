@@ -289,3 +289,47 @@
 }
 
 }
+/* ===========================
+   HERO VISUAL (code-built)
+=========================== */
+
+.hero-visual-grid{
+    background-image:
+        linear-gradient(rgba(148,163,184,.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(148,163,184,.08) 1px, transparent 1px);
+    background-size: 32px 32px;
+}
+
+.hero-visual-flow{
+    animation: heroFlow 2.4s linear infinite;
+}
+
+@keyframes heroFlow{
+    to{ stroke-dashoffset: -20; }
+}
+
+.hero-visual-ring{
+    animation: heroPulse 3.5s ease-in-out infinite;
+}
+
+@keyframes heroPulse{
+    0%,100%{ transform: scale(1); opacity: .9; }
+    50%{ transform: scale(1.05); opacity: .45; }
+}
+
+.hero-visual-card{
+    animation: heroCardFloat 6s ease-in-out infinite;
+}
+
+@keyframes heroCardFloat{
+    0%,100%{ margin-top: 0; }
+    50%{ margin-top: -6px; }
+}
+
+@media (prefers-reduced-motion: reduce){
+    .hero-visual-flow,
+    .hero-visual-ring,
+    .hero-visual-card{
+        animation: none;
+    }
+}
