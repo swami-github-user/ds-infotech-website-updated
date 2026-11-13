@@ -51,7 +51,7 @@ export default function Navbar() {
               href="#contact"
               className="rounded-xl bg-orange-500 px-5 py-3 text-white transition hover:bg-orange-600"
             >
-              Request Training
+              Request a Proposal
             </Link>
 
           </nav>
@@ -86,7 +86,7 @@ export default function Navbar() {
                 className="mx-4 mt-4 rounded-xl bg-orange-500 px-4 py-3 text-center text-white"
                 onClick={() => setMobileOpen(false)}
               >
-                Request Training
+                Request a Proposal
               </Link>
 
             </div>

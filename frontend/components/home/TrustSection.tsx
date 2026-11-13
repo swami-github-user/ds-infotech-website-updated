@@ -2,28 +2,28 @@ import Container from "@/components/ui/Container";
 
 const trustItems = [
   {
-    title: "AWS Certified Trainers",
-    description: "Learn directly from experienced professionals with extensive real-world AWS implementation experience.",
+    title: "Certified Practitioners",
+    description: "Programs are led by practitioners with over a decade of experience and AWS Professional and Specialty certifications.",
   },
   {
-    title: "Standard AWS Learning Paths",
-    description: "Structured programs aligned with AWS certification objectives and industry best practices.",
+    title: "Real Delivery Experience",
+    description: "Proven delivery to enterprise engineering teams, in India and for international audiences.",
   },
   {
-    title: "Hands-on Labs",
-    description: "Practice every concept using guided labs, enterprise-style projects and real-world use cases on AWS.",
+    title: "Hands-on by Design",
+    description: "Every concept is backed by a guided lab, so participants leave with working skills rather than slides.",
   },
   {
-    title: "Certification Preparation",
-    description: "Focused mentoring, mock exams and guidance to confidently clear AWS certification exams.",
+    title: "Current Content",
+    description: "Courseware is updated as AWS services change, with particular depth in Generative AI and agentic AI.",
   },
   {
-    title: "Corporate Training",
-    description: "Instructor-led programs tailored for enterprise teams, partners and technology organizations.",
+    title: "Partner Friendly",
+    description: "We work comfortably under a training partner's brand, process and quality standards.",
   },
   {
-    title: "Career Focused Learning",
-    description: "Build practical cloud and DevOps skills that prepare you for interviews and real projects.",
+    title: "Clear Outcomes",
+    description: "Assessments, feedback and a completion report make the impact of each program visible.",
   },
 ];
 
@@ -44,8 +44,8 @@ export default function TrustSection() {
           </h2>
 
           <p className="mx-auto mt-6 max-w-3xl text-lg text-slate-600">
-            DS Infotech is a specialized AWS training company helping students, working professionals and enterprise teams build real-world cloud expertise. 
-            Our instructor-led programs combine certification-aligned learning paths, hands-on labs, certification preparation and enterprise use cases to deliver practical skills that employers value.
+            DS Infotech is a specialized technology training company focused on AWS, DevOps and Generative AI.
+            We design and deliver practical, lab-driven programs for enterprise teams and for training companies that need dependable subject-matter experts.
           </p>
         </div>
 

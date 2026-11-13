@@ -14,7 +14,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "DS Infotech | Enterprise Cloud, DevOps & AI Learning",
+  title: "DS Infotech | AWS, DevOps & Generative AI Training for Enterprises",
   description:
     "Technology Enablement Partner specializing in Enterprise Cloud, DevOps, AI & GenAI corporate learning solutions.",
 };

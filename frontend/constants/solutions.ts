@@ -1,106 +1,53 @@
 import {
-  Cloud,
-  BrainCircuit,
-  Building2,
-  Code2,
-  Server,
-  Cpu,
-  GitBranchPlus,
-  Layers3,
-  ShieldCheck,
-  Boxes,
   Sparkles,
+  Bot,
+  GitBranchPlus,
+  Boxes,
+  Building2,
+  BrainCircuit,
 } from "lucide-react";
 
 export const solutions = [
   {
-    title: "AWS Cloud Practitioner",
+    title: "GenAI Builder Bootcamp",
     description:
-      "Start your cloud journey by learning AWS fundamentals, core services, pricing, billing and security best practices.",
-    icon: Cloud,
-    level: "Foundational",
-    badges: ["Cloud", "Security", "Billing"],
-  },
-
-  {
-    title: "AWS AI Practitioner",
-    description:
-      "Build foundational AI skills using AWS AI services, Amazon Bedrock and responsible AI practices.",
+      "Build production-style Generative AI applications on Amazon Bedrock: prompt engineering, Knowledge Bases, RAG pipelines, guardrails and cost-aware model selection.",
     icon: Sparkles,
-    trending: true,
-    badges: ["AI", "Bedrock", "Prompting"],
+    badges: ["3 days", "Bedrock", "RAG", "Guardrails"],
   },
-
   {
-    title: "AWS Solutions Architect Associate",
+    title: "Agentic AI on AWS",
     description:
-      "Design secure, scalable and highly available AWS architectures using real-world enterprise scenarios.",
-    icon: Building2,
-    featured: true,
-    badges: ["EC2", "VPC", "S3"],
+      "Design and deploy AI agents with Bedrock Agents, Strands Agents and AgentCore, covering tool use, memory, multi-agent patterns and observability.",
+    icon: Bot,
+    badges: ["2 days", "Agents", "AgentCore", "Strands"],
   },
-
   {
-    title: "AWS Developer Associate",
+    title: "AWS DevOps Accelerator",
     description:
-      "Develop cloud-native applications using Lambda, API Gateway, DynamoDB and modern AWS developer services.",
-    icon: Code2,
-    badges: ["Lambda", "API", "DynamoDB"],
-  },
-
-  {
-    title: "AWS SysOps Administrator",
-    description:
-      "Deploy, monitor and operate production workloads using AWS management and monitoring services.",
-    icon: Server,
-    badges: ["CloudWatch", "EC2", "IAM"],
-  },
-
-  {
-    title: "AWS Machine Learning Engineer Associate",
-    description:
-      "Build, train and deploy machine learning models using Amazon SageMaker and MLOps practices.",
-    icon: BrainCircuit,
-    badges: ["SageMaker", "ML", "MLOps"],
-  },
-
-  {
-    title: "AWS DevOps Engineer Professional",
-    description:
-      "Master CI/CD pipelines, Infrastructure as Code and enterprise DevOps automation on AWS.",
+      "Automate delivery end to end: CI/CD with CodePipeline and GitHub Actions, Infrastructure as Code with CloudFormation and Terraform, and monitoring with CloudWatch.",
     icon: GitBranchPlus,
-    badges: ["CI/CD", "CloudFormation", "EKS"],
+    badges: ["3 days", "CI/CD", "IaC", "Observability"],
   },
-
   {
-    title: "AWS Solutions Architect Professional",
+    title: "Containers to Kubernetes on AWS",
     description:
-      "Design complex enterprise-scale AWS architectures including hybrid and multi-account environments.",
-    icon: Layers3,
-    badges: ["Hybrid", "Networking", "Migration"],
-  },
-
-  {
-    title: "AWS Security Specialty",
-    description:
-      "Protect enterprise AWS workloads using IAM, KMS, GuardDuty, Security Hub and AWS security best practices.",
-    icon: ShieldCheck,
-    badges: ["IAM", "KMS", "GuardDuty"],
-  },
-
-  {
-    title: "Running Containers on Amazon EKS",
-    description:
-      "Deploy, manage and scale Kubernetes workloads using Amazon Elastic Kubernetes Service.",
+      "Go from Docker fundamentals to running production workloads on Amazon ECS and EKS, including Helm, GitOps with Argo CD, scaling and security.",
     icon: Boxes,
-    badges: ["EKS", "Kubernetes", "Containers"],
+    badges: ["3 days", "Docker", "EKS", "GitOps"],
   },
-
   {
-    title: "Generative AI on AWS (Amazon Bedrock)",
+    title: "Cloud Architecture on AWS",
     description:
-      "Build enterprise Generative AI applications using Amazon Bedrock, Knowledge Bases, Agents and RAG.",
-    icon: Cpu,
-    badges: ["Bedrock", "Agents", "RAG"],
+      "Design secure, resilient and cost-optimized architectures across networking, compute, storage and databases, with Well-Architected reviews of real scenarios.",
+    icon: Building2,
+    badges: ["3 days", "VPC", "Resilience", "Cost"],
+  },
+  {
+    title: "Machine Learning & MLOps on AWS",
+    description:
+      "Build, train and deploy models with Amazon SageMaker, then operationalize them with pipelines, model registry, monitoring and automated retraining.",
+    icon: BrainCircuit,
+    badges: ["3 days", "SageMaker", "Pipelines", "MLOps"],
   },
 ];

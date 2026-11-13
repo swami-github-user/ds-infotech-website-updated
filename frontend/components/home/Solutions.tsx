@@ -12,9 +12,9 @@ export default function Solutions() {
       <Container>
 
         <SectionTitle
-          eyebrow="AWS TRAINING PROGRAMS"
-          title="AWS Certification & Professional Training Programs"
-          description="Comprehensive AWS learning paths designed for beginners, professionals and enterprise teams. Every course includes instructor-led training, hands-on labs, real-world projects and certification guidance."
+          eyebrow="FLAGSHIP PROGRAMS"
+          title="Programs Built for Working Engineers"
+          description="Each program can be shortened, extended or combined to fit your audience. Certification readiness modules can be added to any track."
         />
 
         <div className="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-3">

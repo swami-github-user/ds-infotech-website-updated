@@ -23,50 +23,49 @@ export default function Hero() {
           >
 
             <span className="rounded-full bg-orange-100 px-4 py-2 text-sm font-semibold text-orange-600">
-                Cloud, DevOps & Generative AI Training
+                Training Partner for Cloud, DevOps & Generative AI
             </span>
 
             <h1 className="mt-8 text-5xl font-bold leading-tight text-slate-900 lg:text-7xl">
-                Master
+                Hands-on
                 <span className="block text-orange-500">
-                    AWS Cloud
+                    AWS & GenAI
                 </span>
-                with Industry Experts
+                Training for Enterprise Teams
             </h1>
 
             <p className="mt-14 max-w-2xl text-xl leading-8 text-slate-600">
-              Master AWS Cloud, DevOps and Generative AI through structured learning
-              paths aligned with AWS certification objectives, immersive hands-on labs, certification-focused training and
-              enterprise-grade projects.
+              Lab-driven programs in Generative AI, DevOps, containers and
+              cloud architecture on AWS, delivered for enterprise L&amp;D teams
+              and training companies.
 
               <br /><br />
 
-              Whether you're a student, working professional or enterprise team,
-              our programs help you build job-ready cloud skills, earn globally
-              recognized AWS certifications and accelerate your career.
+              Original courseware, tested labs and flexible virtual delivery,
+              tailored to your audience and available under your brand.
             </p>
 
             <div className="mt-10 flex flex-wrap gap-5">
 
                 <Button href="#training-programs">
-                    Explore Courses
+                    View Programs
                 </Button>
 
                 <Button href="#contact" variant="secondary">
-                    Book Free Career Guidance
+                    Request a Proposal
                 </Button>
 
             </div>
 
             <div className="mt-10 flex flex-wrap gap-4 text-sm font-medium text-slate-700">
 
-                <div>✅ Certification-Aligned Learning Paths</div>
+                <div>✅ Virtual Instructor-led</div>
 
-                <div>✅ Hands-on Labs</div>
+                <div>✅ Lab-first Programs</div>
 
-                <div>✅ Certification Preparation</div>
+                <div>✅ Original Courseware</div>
 
-                <div>✅ Corporate Training</div>
+                <div>✅ White-label Ready</div>
 
             </div>
 
