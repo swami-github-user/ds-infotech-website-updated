@@ -57,7 +57,7 @@ export default function Hero() {
 
             </div>
 
-            <div className="mt-10 flex flex-wrap gap-4 text-sm font-medium text-slate-700">
+            <div className="mt-10 grid max-w-md grid-cols-2 gap-x-6 gap-y-3 text-sm font-medium text-slate-700">
 
                 <div>✅ Virtual Instructor-led</div>
 
