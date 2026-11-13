@@ -11,7 +11,7 @@ const trustItems = [
   },
   {
     title: "Hands-on Labs",
-    description: "Real Practice every concept using guided labs and enterprise-style projects on AWS. Projects & Use Cases",
+    description: "Practice every concept using guided labs, enterprise-style projects and real-world use cases on AWS.",
   },
   {
     title: "Certification Preparation",
@@ -45,7 +45,7 @@ export default function TrustSection() {
 
           <p className="mx-auto mt-6 max-w-3xl text-lg text-slate-600">
             DS Infotech is a specialized AWS training company helping students, working professionals and enterprise teams build real-world cloud expertise. 
-            Our instructor-led programs combine official AWS learning paths, hands-on labs, certification preparation and enterprise use cases to deliver practical skills that employers value.
+            Our instructor-led programs combine certification-aligned learning paths, hands-on labs, certification preparation and enterprise use cases to deliver practical skills that employers value.
           </p>
         </div>
 

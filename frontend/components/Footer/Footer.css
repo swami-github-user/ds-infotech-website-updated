@@ -129,3 +129,13 @@
 .footer-links a:hover {
   color: #ff6b00;
 }
+.footer-bottom {
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.footer-bottom .footer-disclaimer {
+  max-width: 640px;
+  font-size: 0.85rem;
+  line-height: 1.6;
+}

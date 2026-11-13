@@ -35,3 +35,7 @@ h5,
 h6 {
   font-family: var(--font-heading);
 }
+/* Keep section headings clear of the fixed navbar on anchor jumps */
+section[id] {
+  scroll-margin-top: 5rem;
+}

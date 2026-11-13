@@ -3,8 +3,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import {
-  Mail,
-  Phone,
   MapPin,
   Clock,
 } from "lucide-react";
@@ -236,25 +234,7 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="flex gap-4">
-                <Mail className="text-orange-500" />
-                <div>
-                  <h4 className="font-semibold">Email</h4>
-                  <p className="text-slate-600">
-                    info@dsinfotech.com
-                  </p>
-                </div>
-              </div>
 
-              <div className="flex gap-4">
-                <Phone className="text-orange-500" />
-                <div>
-                  <h4 className="font-semibold">Phone</h4>
-                  <p className="text-slate-600">
-                    +91 XXXXX XXXXX
-                  </p>
-                </div>
-              </div>
 
               <div className="flex gap-4">
                 <Clock className="text-orange-500" />

@@ -14,7 +14,7 @@ export default function FeatureCard({
   title,
   description,
   badges = [],
-  href = "#",
+  href = "#contact",
 }: FeatureCardProps) {
   return (
     <a
@@ -47,7 +47,7 @@ export default function FeatureCard({
       )}
 
       <div className="mt-8 flex items-center font-semibold text-orange-500">
-        Learn More
+        Request Details
 
         <ArrowRight
           className="ml-2 transition-transform duration-300 group-hover:translate-x-2"
